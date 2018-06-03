@@ -5,8 +5,9 @@ Assigned: 6-04-18
 Due date: 6-18-18
 
 Your third assignment will be a knowledge engineering project. 
+
     • develop a rule-based system which handles some classification or diagnostic task. 
-      
+
     • Your system should have a rule-base with 30 to 50 rules. 
         ◦ If you work with a partner your rule-base will need to be 30 to 50 rules per person and each person is to be assigned a percentage grade (by each team member) indicating the extent of his or her project contribution.
         ◦ For example, you might try computer system selection based on desired component attributes or diagnosing common microcomputer system problems.
@@ -19,8 +20,11 @@ One strategy for designing an expert system involves building a binary decision 
 Prior to beginning the design of an expert system, you must identify a domain expert or some printed source for the knowledge encoded in your production rules. You will need to provide some evidence that your system does in fact perform correctly. I would suggest that you construct test cases which seem to be representative of problems you are seeking to diagnose or entities you are seeking to distinguish from one another. Hopefully, your system will provide the same answer as your expert source.
 
 You will need to turn in: 
-    • an annotated listing of your rule-base (comments are allowed in M1, Lisp, and Prolog), 
+
+    • an annotated listing of your rule-base (comments are allowed in M1, Lisp, and Prolog)
+
     • sample output
+    
     • memo documenting your system. 
         ◦ You must include in this memo, a description of your inference strategy and your means of conflict resolution.
         ◦  Comments on the performance of your expert system relative to your test cases would also be appropriate.
