@@ -11,7 +11,17 @@ namespace CIS479_Project3
         private static readonly Neopets _pets = new Neopets();
         static void Main(string[] args)
         {
-            
+            Run();
         }
+        static void Run() {
+            EvalAvailability();
+            EvalBio();
+            EvalPhysical();
+            EvalPersonality();
+        }
+        static void EvalAvailability() { }
+        static void EvalBio() { }
+        static void EvalPhysical() { }
+        static void EvalPersonality() { }
     }
 }

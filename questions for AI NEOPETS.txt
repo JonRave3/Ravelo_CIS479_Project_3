@@ -1,0 +1,353 @@
+Which preference do you have for your Neopets?
+Aerial 
+Aquatic
+Land 
+None
+
+Do you have a size preference?
+small
+medium
+large
+none
+
+How many legs do you prefer?
+two
+four
+none
+
+Does your ideal Neopet have ears?
+yes
+no
+don't care
+
+Does it have tusks or horns?
+yes
+no
+don't care
+
+Do you want your Neopet to have a tail?
+yes 
+no
+don't care
+
+What purpose should the tail serve?
+bouncing
+hanging
+navigating the sea
+standing
+no preference
+
+Hooves included? --paws, flippers
+yes
+no
+don't care
+
+if paws--> then claws
+
+Does your ideal Neopet have a standing preference? 
+tail
+feet 
+don't care
+
+10. Does the ideal Neopet with feet standing preference prefer
+two feet
+four feet
+don't care
+
+Does your ideal Neopet have arms/hands? 
+yes
+no
+don't care
+
+Does your ideal Neopet have any allergies?
+yes
+no
+don't care
+
+Does your ideal Neopet have good senses?
+yes
+no 
+don't care
+
+if yes--> combine all three
+
+have good hearing?
+yes
+no
+don't care
+
+have good vision?
+yes
+no 
+don't care
+
+have good smell?
+yes
+no
+don't care
+
+have wings?
+yes
+no
+don't care
+
+What wing size does your ideal Neopet have?
+small
+large
+don't care
+
+What wing type does your ideal Neopet have?
+feathered
+webbed
+don't care
+
+20. Is your ideal Neopet Nocturnal?
+yes
+no
+don't care
+
+Does your ideal Neopet have fur?
+yes
+no don't care
+
+Where does your Neopet have fur at?
+neck
+back
+mane 
+tail
+all over
+don't care
+
+Does your ideal Neopet have flippers?
+yes
+no
+don't care
+
+Does your ideal Neopet have horns?
+yes
+no 
+don't care
+
+Does your ideal Neopet have a nose?
+yes 
+no
+don't care
+
+What type of nose does your Neopet have?
+beak
+snout
+trunk
+don't care
+
+--->what kind of mouth--> 
+
+Does your ideal Neopet have claws?
+yes
+no 
+don't care
+
+one-off
+Is your ideal Neopet a herbivore?
+yes
+no
+don't care
+
+Do you want your Neopet to come from a specific Animal Kingdom?
+yes
+no
+don't care
+
+30. What Animal Kingdom is your Neopet from ...?
+dragon/reptile
+mammal
+insects
+amphibians
+fish
+aliens
+bird
+
+Is your ideal Neopet...
+Common
+Rare
+Special
+don't care
+
+MAYBE--
+If Special:
+Is it March 22nd?
+no
+yes
+
+Is it April 27th?
+yes
+no
+
+Is it August 24th?
+yes
+no
+
+Is it May 4th?
+yes
+no
+
+Is it October 16th?
+yes
+no
+
+Is it July 17th?
+yes
+no
+
+Is it May 25th?
+yes
+no
+
+Is it April 19th?
+yes
+no
+
+40. Is it September 19th?
+yes
+no
+
+Is it July 29th?
+yes
+no
+
+Is it February 21st?
+yes
+no
+
+Does your ideal Neopet have a habitat preference?
+yes
+no 
+don't care
+
+What is your ideal Neopet's habitat preference?
+Tropical
+Medows
+Urban
+Beaches
+Mountains 
+Islands
+Desert
+Tundra
+Oceans
+Lakes
+
+Is your ideal Neopet Lazy or Playful?
+Lazy
+Playful
+don't care
+
+
+Is your ideal Neopet shy or outgoing?
+shy
+outgoing
+don't care
+
+Is your ideal Neopet friendly or ferocious?
+friendly
+ferocious
+don't care
+
+Is your ideal Neopet adventurous or intelligent
+intelligent
+adventurous
+both
+don't care
+
+Is your ideal Neopet lucky or magical?
+yes
+no 
+don't care
+
+50. Is your ideal Neopet brave or generous?
+brave
+generous
+both
+don't care
+
+Is your ideal Neopet quick?
+yes
+no
+don't care
+
+Is your ideal Neopet peaceful or competitive?
+peaceful
+competitive
+both
+don't care
+
+Does your ideal Neopet love food?
+yes
+no
+don't care
+
+Is your ideal Neopet loyal or mischievous?
+loyal
+mischievous
+both
+don't care
+
+Is your ideal Neopet outgoing or sensititve?
+outgoing
+sensitive
+both
+don't care
+
+Does your ideal Neopet originate from a specific location in Neopia?
+yes
+no 
+don't care
+
+If yes:
+Is it an urban area?
+yes
+no
+don't care
+
+if yes:
+Does your ideal Neopet originate from...
+Meridell 
+Neopia Central
+don't care
+
+if no to urban area:
+Is it by water?
+yes
+no
+don't care
+
+if yes to water:
+Is it an island?
+yes
+no
+don't careu
+
+if no to island:
+Does your ideal Neopet originate from...
+Kiko Lake
+Maraqua
+don't care
+
+If yes to island:
+Does your ideal Neopet originate from...
+Mystery Island
+Lutari Island
+Roo Island
+Kraik Island
+don't care
+
+if no to water:
+Does your ideal Neopet Originate from...
+Space/sky
+Land
+don't care
+
+Tyrannia
+Terror Mountain
+Kredulor
+Faerieland
+Lost Desert
+don't care
