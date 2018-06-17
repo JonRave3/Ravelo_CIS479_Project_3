@@ -1,4 +1,3 @@
-
 #Physical
 Do you want your Neopet to come from a specific Animal Kingdom?
 yes
@@ -13,6 +12,7 @@ amphibians
 fish
 aliens
 bird
+
 
 Do you have a size preference?
 small
@@ -162,9 +162,8 @@ yes
 no
 don't care
 
-
-
 #availability
+
 Is your ideal Neopet...
 Common
 Rare
@@ -216,8 +215,6 @@ no
 Is it February 21st?
 yes
 no
-
-
 
 Does your ideal Neopet originate from a specific location in Neopia?
 yes
@@ -330,7 +327,6 @@ sensitive
 both
 don't care
 
-
 #Bio
 Which preference do you have for your Neopets?
 1. Aerial 
@@ -355,6 +351,7 @@ Desert
 Tundra
 Oceans
 Lakes
+
 Tyrannia
 Terror Mountain
 Kredulor
