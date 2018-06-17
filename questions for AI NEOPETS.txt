@@ -1,8 +1,18 @@
-Which preference do you have for your Neopets?
-Aerial 
-Aquatic
-Land 
-None
+#Physical
+Do you want your Neopet to come from a specific Animal Kingdom?
+yes
+no
+don't care
+
+30. What Animal Kingdom is your Neopet from ...?
+dragon/reptile
+mammal
+insects
+amphibians
+fish
+aliens
+bird
+
 
 Do you have a size preference?
 small
@@ -152,19 +162,7 @@ yes
 no
 don't care
 
-Do you want your Neopet to come from a specific Animal Kingdom?
-yes
-no
-don't care
-
-30. What Animal Kingdom is your Neopet from ...?
-dragon/reptile
-mammal
-insects
-amphibians
-fish
-aliens
-bird
+#availability
 
 Is your ideal Neopet...
 Common
@@ -218,23 +216,56 @@ Is it February 21st?
 yes
 no
 
-Does your ideal Neopet have a habitat preference?
+Does your ideal Neopet originate from a specific location in Neopia?
 yes
 no 
 don't care
 
-What is your ideal Neopet's habitat preference?
-Tropical
-Medows
-Urban
-Beaches
-Mountains 
-Islands
-Desert
-Tundra
-Oceans
-Lakes
+If yes:
+Is it an urban area?
+yes
+no
+don't care
 
+if yes:
+Does your ideal Neopet originate from...
+Meridell 
+Neopia Central
+don't care
+
+if no to urban area:
+Is it by water?
+yes
+no
+don't care
+
+if yes to water:
+Is it an island?
+yes
+no
+don't careu
+
+if no to island:
+Does your ideal Neopet originate from...
+Kiko Lake
+Maraqua
+don't care
+
+If yes to island:
+Does your ideal Neopet originate from...
+Mystery Island
+Lutari Island
+Roo Island
+Kraik Island
+don't care
+
+if no to water:
+Does your ideal Neopet Originate from...
+Space/sky
+Land
+don't care
+
+#Personality
 Is your ideal Neopet Lazy or Playful?
 Lazy
 Playful
@@ -296,54 +327,30 @@ sensitive
 both
 don't care
 
-Does your ideal Neopet originate from a specific location in Neopia?
+#Bio
+Which preference do you have for your Neopets?
+1. Aerial 
+2. Aquatic
+3. Land 
+4. None
+
+
+Does your ideal Neopet have a habitat preference?
 yes
 no 
 don't care
 
-If yes:
-Is it an urban area?
-yes
-no
-don't care
-
-if yes:
-Does your ideal Neopet originate from...
-Meridell 
-Neopia Central
-don't care
-
-if no to urban area:
-Is it by water?
-yes
-no
-don't care
-
-if yes to water:
-Is it an island?
-yes
-no
-don't careu
-
-if no to island:
-Does your ideal Neopet originate from...
-Kiko Lake
-Maraqua
-don't care
-
-If yes to island:
-Does your ideal Neopet originate from...
-Mystery Island
-Lutari Island
-Roo Island
-Kraik Island
-don't care
-
-if no to water:
-Does your ideal Neopet Originate from...
-Space/sky
-Land
-don't care
+What is your ideal Neopet's habitat preference?
+Tropical
+Medows
+Urban
+Beaches
+Mountains 
+Islands
+Desert
+Tundra
+Oceans
+Lakes
 
 Tyrannia
 Terror Mountain
