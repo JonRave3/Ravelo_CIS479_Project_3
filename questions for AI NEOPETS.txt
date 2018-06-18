@@ -361,3 +361,40 @@ Kredulor
 Faerieland
 Lost Desert
 don't care
+
+
+48.Is your ideal Neopet shy or outgoing?
+shy => shy, sensitive
+outgoing => frienldy, outgoing, playful
+don't care
+
+49.Is your ideal Neopet peaceful or combative?
+peaceful => pacifist, peaceful, lazy
+combative => ferocious, feiri, competitve
+don't care
+
+50.Is your ideal Neopet adventurous or intelligent
+intelligent => intelligent, quick
+adventurous => brave, adventurous
+both => intelligent, brave, adventurous
+don't care
+
+51.Is your ideal Neopet lucky or magical?
+yes => Magical, Lucky
+no => !Magical, !Lucky
+don't care
+
+52. Is your ideal Neopet Generous and Kind?
+yes => Generous, kind
+no => !Generous, !kind
+don't care
+
+55.Does your ideal Neopet love food?
+yes => Foodie
+no
+
+56.Is your ideal Neopet loyal or mischievous?
+loyal => loyal
+mischievous => mischievous
+both => loyal, mischievous
+don't care
