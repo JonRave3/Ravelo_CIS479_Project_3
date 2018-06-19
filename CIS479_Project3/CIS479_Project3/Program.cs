@@ -2621,8 +2621,7 @@ namespace CIS479_Project3
 
         #endregion
 
-        #region Physical
-        
+        #region Physical       
         public static void EvalPhysical()
         {
             PhysicalKingdomQuestion1();
@@ -2849,7 +2848,7 @@ namespace CIS479_Project3
             }
         }
         public static void PhysicalLegQuestion2() {
-            var options = new string[] { "1. Paws", "2. Hooves", "3. Flippes", "4. Other" };
+            var options = new string[] { "1. Paws", "2. Hooves", "3. Flippers", "4. Other" };
             var answer = GetInput("What type of legs do they have?", options);
             switch (answer)
             {
@@ -2861,7 +2860,6 @@ namespace CIS479_Project3
                             _pets[i].CF++;
                         }
                     }
-                    PhysicalLegQuestion2();
                     break;
                 case 2:
                     for (var i = 0; i < _pets.Count; i++)
@@ -2871,7 +2869,6 @@ namespace CIS479_Project3
                             _pets[i].CF++;
                         }
                     }
-                    PhysicalLegQuestion2();
                     break;
                 case 3:
                     for (var i = 0; i < _pets.Count; i++)
