@@ -2835,7 +2835,7 @@ namespace CIS479_Project3
             PhysicalDietQuestion();
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding user-preference for a Neopets "Animal-Kingdom"
         /// </summary>
         public static void PhysicalKingdomQuestion1() {
             var options = new string[] { "1. Dragons", "2. Aliens", "3. Birdies", "4. Live Birthers", "5. Creepy-Crawlies/Bugsie-Wugies", "6. Fishies", "7. Reptiles/Amphibians", "8. Who knows?", "9. No Preference" };
@@ -2843,6 +2843,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets whose Kingdom is Dragon
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Kingdom == Kingdom.Dragon)
@@ -2852,6 +2853,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 2:
+                    //increase the likelyhood for Neopets whose Kingdom is Alien
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Kingdom == Kingdom.Alien)
@@ -2861,6 +2863,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 3:
+                    //increase the likelyhood for Neopets whose Kingdom is Bird
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Kingdom == Kingdom.Bird)
@@ -2870,6 +2873,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 4:
+                    //increase the likelyhood for Neopets whose Kingdom is Mammal
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Kingdom == Kingdom.Mammal)
@@ -2879,6 +2883,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 5:
+                    //increase the likelyhood for Neopets whose Kingdom is Insect
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Kingdom == Kingdom.Insect)
@@ -2888,6 +2893,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 6:
+                    //increase the likelyhood for Neopets whose Kingdom is Fish
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Kingdom == Kingdom.Fish)
@@ -2897,6 +2903,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 7:
+                    //increase the likelyhood for Neopets whose Kingdom is Reptile
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Kingdom == Kingdom.Reptile)
@@ -2906,6 +2913,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 8:
+                    //increase the likelyhood for Neopets whose Kingdom is Other
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Kingdom == Kingdom.Other)
@@ -2917,13 +2925,14 @@ namespace CIS479_Project3
             }
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding user-preference for the relative size of the Neopet
         /// </summary>
         public static void PhysicalSizeQuestion1() {
             var options = new string[] { "1. Large", "2. Medium", "3. Small", "4. No Preference" };
             var answer = GetInput("How big is your ideal Neopet?", options);
             switch (answer) {
                 case 1:
+                    //increase the likelyhood for Neopets whose Size is Large
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.Size == Sizes.Large)
@@ -2933,6 +2942,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 2:
+                    //increase the likelyhood for Neopets whose Size is Medium
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.Size == Sizes.Medium)
@@ -2942,6 +2952,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 3:
+                    //increase the likelyhood for Neopets whose Size is Small
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.Size == Sizes.Small)
@@ -2954,13 +2965,14 @@ namespace CIS479_Project3
 
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding user-preference for a Neopet with a tail
         /// </summary>
         public static void PhysicalTailQuestion1()
         {
             var options = new string[] { "1. Yes", "2. No" };
             var answer = GetInput("Does your Neopet have a tail?", options);
             if (answer == 1) {
+                //increase the likelyhood for Neopets that has a tail
                 for (var i = 0; i < _pets.Count; i++)
                 {
                     if (_pets[i].Physical_Traits.Tail)
@@ -2968,17 +2980,19 @@ namespace CIS479_Project3
                         _pets[i].CF++;
                     }
                 }
+                //begin asking specifics on the tail
                 PhysicalTailQuestion2();
             }
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding user-preference for how the Neopet will use the tail
         /// </summary>
         public static void PhysicalTailQuestion2() {
             var options = new string[] { "1. Bounce around", "2. Hanging", "3. Moving about", "4. Look taller", "5. No Preference" };
             var answer = GetInput("How do they use their tails?", options);
             switch (answer) {
                 case 1:
+                    //increase the likelyhood of selecting Neopets that will use thier tail for bouncing
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.TailPurpose == TailPurpose.Bouncing)
@@ -2988,6 +3002,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 2:
+                    //increase the likelyhood of selecting Neopets that will use thier tail for hanging on trees or branches
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.TailPurpose == TailPurpose.Hanging)
@@ -2997,6 +3012,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 3:
+                    // increase the likelyhood of selecting Neopets that will use thier tail for moving around
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.TailPurpose == TailPurpose.Navigating)
@@ -3006,6 +3022,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 4:
+                    // increase the likelyhood of selecting Neopets that will use thier tail to perch or stand up
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.TailPurpose == TailPurpose.Standing)
@@ -3019,7 +3036,7 @@ namespace CIS479_Project3
             }
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding the number of legs the Neopet should have
         /// </summary>
         public static void PhysicalLegQuestion1() {
             var options = new string[] { "1. 2 Legs", "2. 4 Legs", "3. None", "4. No Preference" };
@@ -3027,6 +3044,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets that have 2 legs
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.Legs == LegCount.Two)
@@ -3034,9 +3052,11 @@ namespace CIS479_Project3
                             _pets[i].CF++;
                         }
                     }
+                    //begin asking the type of feet the Neopet will have
                     PhysicalLegQuestion2();
                     break;
                 case 2:
+                    //increase the likelyhood for Neopets that have 4 legs
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.Legs == LegCount.Four)
@@ -3044,9 +3064,11 @@ namespace CIS479_Project3
                             _pets[i].CF++;
                         }
                     }
+                    //begin asking the type of feet the Neopet will have
                     PhysicalLegQuestion2();
                     break;
                 case 3:
+                    //increase the likelyhood for Neopets that have no legs
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.Legs == LegCount.None)
@@ -3060,7 +3082,7 @@ namespace CIS479_Project3
             }
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding user-preference for the type of feet the Neopet should have
         /// </summary>
         public static void PhysicalLegQuestion2() {
             var options = new string[] { "1. Paws", "2. Hooves", "3. Flippers", "4. Other" };
@@ -3068,6 +3090,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets that have paws
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.LegType == LegType.Paws)
@@ -3077,6 +3100,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 2:
+                    //increase the likelyhood for Neopets that have hooved feet
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.LegType == LegType.Hooves)
@@ -3086,6 +3110,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 3:
+                    //increase the likelyhood for Neopets that have flippers or webbed feet
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.LegType == LegType.Flippers)
@@ -3095,6 +3120,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 4:
+                    //increase the likelyhood for Neopets that some type of feet
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.LegType == LegType.Other)
@@ -3108,12 +3134,13 @@ namespace CIS479_Project3
             }
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding user-preference for a Neopet with ears or not
         /// </summary>
         public static void PhysicalEarsQuestion1() {
             var options = new string[] { "1. Yes", "2. No Ears", "3. No Preference" };
             var answer = GetInput("I would prefer them to have listen holes", options);
             if (answer == 1) {
+                //increase the likelyhood for Neopets that have ears
                 for (var i = 0; i < _pets.Count; i++)
                 {
                     if (_pets[i].Physical_Traits.Ears)
@@ -3123,6 +3150,7 @@ namespace CIS479_Project3
                 } 
             }
             else if (answer == 2) {
+                //increase the likelyhood for Neopets that don't have ears
                 for (var i = 0; i < _pets.Count; i++)
                 {
                     if (!_pets[i].Physical_Traits.Ears)
@@ -3133,13 +3161,14 @@ namespace CIS479_Project3
             }
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding user-preference for a Neopet with tusks or horns
         /// </summary>
         public static void PhysicalTusksHornsQuestion1() {
             var options = new string[] { "1. Tusks", "2. Horns", "3. Both", "4. No Preference" };
             var answer = GetInput("I would prefer them to have", options);
             switch (answer) {
                 case 1:
+                    //increase the likelyhood for Neopets that have tusks
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.Tusks)
@@ -3149,6 +3178,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 2:
+                    //increase the likelyhood for Neopets that have horns
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.Horns)
@@ -3158,6 +3188,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 3:
+                    //increase the likelyhood for Neopets that have Tusks or Horns
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.Tusks && _pets[i].Physical_Traits.Horns)
@@ -3170,13 +3201,14 @@ namespace CIS479_Project3
             }
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding user-preference for a Neopet with a nose
         /// </summary>
         public static void PhysicalNoseQuestion1() {
             var options = new string[] { "1. Beaks", "2. Trunks", "3. Jaws", "4. No preference!" };
             var answer = GetInput("I would prefer them to have", options);
             if (answer == 1)
             {
+                //increase the likelyhood for Neopets that have beaks
                 for (var i = 0; i < _pets.Count; i++)
                 {
                     if (_pets[i].Physical_Traits.Snout == SnoutType.Beaked)
@@ -3187,6 +3219,7 @@ namespace CIS479_Project3
             }
             else if (answer == 2)
             {
+                //increase the likelyhood for Neopets that have a Trunk
                 for (var i = 0; i < _pets.Count; i++)
                 {
                     if (_pets[i].Physical_Traits.Snout == SnoutType.Trunked)
@@ -3197,6 +3230,7 @@ namespace CIS479_Project3
             }
             else if (answer == 3)
             {
+                //increase the likelyhood for Neopets that have some type of jawed/hinged mouth
                 for (var i = 0; i < _pets.Count; i++)
                 {
                     if (_pets[i].Physical_Traits.Snout == SnoutType.Jawed)
@@ -3207,16 +3241,18 @@ namespace CIS479_Project3
             }
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding user-preference for a Neopet with a fur/hair
         /// </summary>
         public static void PhysicalFurQuestion1() {
             var options = new string[] { "1. So much fur!", "2. Fur is murder!!!", "3. No Preference" };
             var answer = GetInput("My furr preference is...", options);
             switch (answer) {
                 case 1:
+                    //begin asking specifics on the where the hair should be located
                     PhysicalFurQuestion2();
                     break;
                 case 2:
+                    //increase the likelyhood for Neopets that don't have hair
                     for (int i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.Fur.Contains(Hair.None))
@@ -3229,7 +3265,7 @@ namespace CIS479_Project3
             }
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding user-preference for hair location on their Neopet
         /// </summary>
         public static void PhysicalFurQuestion2() {
             var options = new string[] { "1. Everywhere!", "2. On their noggin", "3. Neck", "4. Luscious Mane!", "5. Tail" };
@@ -3237,6 +3273,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets that have hair everywhere
                     for (int i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.Fur.Contains(Hair.AllOver))
@@ -3246,6 +3283,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 2:
+                    //increase the likelyhood for Neopets that have hair on their head
                     for (int i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.Fur.Contains(Hair.Head))
@@ -3255,6 +3293,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 3:
+                    //increase the likelyhood for Neopets that have hair on their neck
                     for (int i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.Fur.Contains(Hair.Neck))
@@ -3264,6 +3303,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 4:
+                    //increase the likelyhood for Neopets that have hair as a mane
                     for (int i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.Fur.Contains(Hair.Mane))
@@ -3273,6 +3313,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 5:
+                    //increase the likelyhood for Neopets that have hair on their tails
                     for (int i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.Fur.Contains(Hair.Tail))
@@ -3285,7 +3326,7 @@ namespace CIS479_Project3
             }
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding user-preference for a Neopet with arms/hands
         /// </summary>
         public static void PhysicalHandsQuestion1() {
             var options = new string[] { "1. Yes", "2. No" };
@@ -3293,6 +3334,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets that have hands
                     for (int i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.Hands)
@@ -3302,6 +3344,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 2:
+                    //increase the likelyhood for Neopets that have don't have hands
                     for (int i = 0; i < _pets.Count; i++)
                     {
                         if (!_pets[i].Physical_Traits.Hands)
@@ -3313,7 +3356,7 @@ namespace CIS479_Project3
             }
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding user-preference for a Neopet with known allergies
         /// </summary>
         public static void PhysicalAllergyQuestion1() {
             var options = new string[] { "1. Like a Boss", "2. Bring on the Sniffles!" };
@@ -3321,6 +3364,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets that don't have Allergies
                     for (int i = 0; i < _pets.Count; i++)
                     {
                         if (!_pets[i].Physical_Traits.Allergies)
@@ -3330,9 +3374,10 @@ namespace CIS479_Project3
                     }
                     break;
                 case 2:
+                    //increase the likelyhood for Neopets that have Allergies
                     for (int i = 0; i < _pets.Count; i++)
                     {
-                        if (_pets[i].Physical_Traits.Hands)
+                        if (_pets[i].Physical_Traits.Allergies)
                         {
                             _pets[i].CF++;
                         }
@@ -3341,7 +3386,7 @@ namespace CIS479_Project3
             }
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding user-preference for a Neopet with claws
         /// </summary>
         public static void PhysicalClawsQuestion1() {
             var options = new string[] { "1. Heck Yass", "2. No Pokies!", "3. No Preference" };
@@ -3349,6 +3394,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets that have claws
                     for (int i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.Clawed)
@@ -3358,6 +3404,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 2:
+                    //increase the likelyhood for Neopets that don't have claws
                     for (int i = 0; i < _pets.Count; i++)
                     {
                         if (!_pets[i].Physical_Traits.Clawed)
@@ -3369,7 +3416,7 @@ namespace CIS479_Project3
             }
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding user-preference for a Neopet that is nocturnal
         /// </summary>
         public static void PhysicalNocturnQuestion1() {
             var options = new string[] { "1. They ain't afraid of no ghosts! ", "2. They might need a night-light", "3. No Preference" };
@@ -3377,6 +3424,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets that are nocturnal
                     for (int i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.Nocturnal)
@@ -3386,6 +3434,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 2:
+                    //increase the likelyhood for Neopets that are not nocturnal
                     for (int i = 0; i < _pets.Count; i++)
                     {
                         if (!_pets[i].Physical_Traits.Nocturnal)
@@ -3397,7 +3446,7 @@ namespace CIS479_Project3
             }
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding user-preference for their Neopet's diet
         /// </summary>
         public static void PhysicalDietQuestion() {
             var options = new string[] { "1. Meatsies", "2. Veggies/Fruitsies", "3. Everything", "4. No Preference" };
@@ -3405,6 +3454,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets that only eat meat
                     for (int i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.Diet == Diet.Carnivore)
@@ -3414,6 +3464,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 2:
+                    //increase the likelyhood for Neopets that only eat veggies/plants
                     for (int i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.Diet == Diet.Herbivore)
@@ -3423,6 +3474,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 3:
+                    //increase the likelyhood for Neopets that eat either meat or veggies or both
                     for (int i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Physical_Traits.Diet == Diet.Omnivore || 
@@ -3437,7 +3489,7 @@ namespace CIS479_Project3
             PhysicalAllergyQuestion1();
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding user-preference for a Neopet with wings
         /// </summary>
         public static void AerialPhysicalQuestion1()
         {
@@ -3445,6 +3497,7 @@ namespace CIS479_Project3
             var answer = GetInput("Does your Neopet have wings?", options);
             if (answer == 1)
             {
+                //increase the likelyhood for Neopets that have wings
                 for (var i = 0; i < _pets.Count; i++)
                 {
                     if (_pets[i].Physical_Traits.Wing_Type.HasValue)
@@ -3452,11 +3505,12 @@ namespace CIS479_Project3
                         _pets[i].CF++;
                     }
                 }
+                //continue asking the type of wings
                 AerialPhysicalQuestion2();
             }
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding user-preference for a Neopet with feathered or webbed wings
         /// </summary>
         public static void AerialPhysicalQuestion2()
         {
@@ -3464,6 +3518,7 @@ namespace CIS479_Project3
             var answer = GetInput("What type of wings do they have?", options);
             if (answer == 1)
             {
+                //increase the likelyhood for Neopets that have feathered wings
                 for (var i = 0; i < _pets.Count; i++)
                 {
                     if (_pets[i].Physical_Traits.Wing_Type == WingType.Feathers)
@@ -3474,6 +3529,7 @@ namespace CIS479_Project3
             }
             if (answer == 2)
             {
+                //increase the likelyhood for Neopets that have webbed wings
                 for (var i = 0; i < _pets.Count; i++)
                 {
                     if (_pets[i].Physical_Traits.Wing_Type == WingType.Webbed)
@@ -3482,10 +3538,11 @@ namespace CIS479_Project3
                     }
                 }
             }
+            //continue asking the size of the wings
             AerialPhysicalQuestion3();
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding user-preference for a Neopet with a large or small wings
         /// </summary>
         public static void AerialPhysicalQuestion3()
         {
@@ -3493,6 +3550,7 @@ namespace CIS479_Project3
             var answer = GetInput("Does you Neopt have...?", options);
             if (answer == 1)
             {
+                //increase the likelyhood for Neopets that have large wing
                 for (var i = 0; i < _pets.Count; i++)
                 {
                     if (_pets[i].Physical_Traits.Wing_Size == WingSize.Large)
@@ -3503,6 +3561,7 @@ namespace CIS479_Project3
             }
             if (answer == 2)
             {
+                //increase the likelyhood for Neopets that have small wings
                 for (var i = 0; i < _pets.Count; i++)
                 {
                     if (_pets[i].Physical_Traits.Wing_Size == WingSize.Small)
