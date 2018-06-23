@@ -28,6 +28,10 @@ namespace CIS479_Project3
                 Console.WriteLine(e.Message);
             }
         }
+
+        /// <summary>
+        /// Initializes and Seeds list of ALL Neopets and their mapped attributes
+        /// </summary>
         static void init()
         {
             _pets = new List<Neopet>() {
@@ -1681,6 +1685,9 @@ namespace CIS479_Project3
                 }
             };
         }
+        /// <summary>
+        /// Requests user preference regarding their ideal Neopet and generates recommendations 
+        /// </summary>
         static void Run() {
             EvalAvailability();
             EvalBio();
@@ -2808,7 +2815,10 @@ namespace CIS479_Project3
 
         #endregion
 
-        #region Physical       
+        #region Physical
+        /// <summary>
+        /// Entry point to begin asking questions regarding the user's preference for physical attributes for their ideal Neopet
+        /// </summary>
         public static void EvalPhysical()
         {
             PhysicalKingdomQuestion1();
@@ -3507,7 +3517,7 @@ namespace CIS479_Project3
 
         #region Personality
         /// <summary>
-        /// 
+        /// Entry point to begin asking questions regarding the user's preference for personality traits for their ideal Neopet
         /// </summary>
         public static void EvalPersonality()
         {
@@ -3520,7 +3530,7 @@ namespace CIS479_Project3
             PersonalityLoyalMischievousQuestion7();
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding user-preference for a shy or outgoing Neopet
         /// </summary>
         public static void PersonalityShyOutgoingQuestion1() {
             var options = new string[] { "1. Shy", "2. Outgoing", "3. No Preference" };
@@ -3529,6 +3539,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets whose personality traits contain Shy or Sensitive
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Personality_Traits.Contains(Pers_T.Shy) ||
@@ -3539,6 +3550,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 2:
+                    //increase the likelyhood for Neopets whose personality traits contain Playful, Outgoing, or Playful
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Personality_Traits.Contains(Pers_T.Playful) ||
@@ -3552,7 +3564,7 @@ namespace CIS479_Project3
             }
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding user-preference for a peaceful or combative Neopet
         /// </summary>
         public static void PersonalityPeacefulCombativeQuestion2() {
             var options = new string[] { "1. Peaceful", "2. Combative", "3. No Preference" };
@@ -3561,6 +3573,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets whose personality traits contain Peaceful, Pacifist, or Lazy
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Personality_Traits.Contains(Pers_T.Peaceful) ||
@@ -3572,6 +3585,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 2:
+                    //increase the likelyhood for Neopets whose personality traits contain Ferocious, Fieri or Competitive
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Personality_Traits.Contains(Pers_T.Ferocious) ||
@@ -3585,7 +3599,7 @@ namespace CIS479_Project3
             }
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding user-preference for an Adventurous or Intelligent Neopet
         /// </summary>
         public static void PersonalityAventurousIntelligentQuestion3() {
             var options = new string[] { "1. Adventurous", "2. Intelligent", "3. No Preference" };
@@ -3594,6 +3608,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets whose personality traits contain Intelligent or Quick
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Personality_Traits.Contains(Pers_T.Intelligent) ||
@@ -3604,6 +3619,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 2:
+                    //increase the likelyhood for Neopets whose personality traits contain Brave or Adventureous
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Personality_Traits.Contains(Pers_T.Brave) ||
@@ -3616,7 +3632,7 @@ namespace CIS479_Project3
             }
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding user-preference for a neopet that is Lukcy or Magical
         /// </summary>
         public static void PersonalityLuckyMagicalQuestion4() {
             var options = new string[] { "1. Yes", "2. No", "3. No Preference" };
@@ -3625,6 +3641,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets whose personality traits contain Lucky or Magical
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Personality_Traits.Contains(Pers_T.Lucky) ||
@@ -3635,6 +3652,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 2:
+                    //Decrease the likelyhood for Neopets whose personality traits contain Lucky or Magical
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Personality_Traits.Contains(Pers_T.Lucky) ||
@@ -3647,7 +3665,7 @@ namespace CIS479_Project3
             }
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding user-preference for a neopet that is Kind and Generous
         /// </summary>
         public static void PersonalityGenerousKindQuestion5() {
             var options = new string[] { "1. Yes", "2. No", "3. No Preference" };
@@ -3656,6 +3674,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets whose personality traits contain Kind or Generous
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Personality_Traits.Contains(Pers_T.Kind) ||
@@ -3666,6 +3685,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 2:
+                    //Decrease the likelyhood for Neopets whose personality traits contain Kind or Generous
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Personality_Traits.Contains(Pers_T.Kind) ||
@@ -3678,7 +3698,7 @@ namespace CIS479_Project3
             }
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding user-preference for a neopet that loves food
         /// </summary>
         public static void PersonalityFoodieQuestion6() {
             var options = new string[] { "1. They're a little fatty!", "2. No Preference" };
@@ -3687,6 +3707,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets whose personality traits contain Foodie
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Personality_Traits.Contains(Pers_T.Foodie))
@@ -3698,7 +3719,7 @@ namespace CIS479_Project3
             }
         }
         /// <summary>
-        /// 
+        /// Requests additional information reguarding user-preference for a neopet loyal or mischievious
         /// </summary>
         public static void PersonalityLoyalMischievousQuestion7() {
             var options = new string[] { "1. Ride or Die!", "2. Lil'@$$hole!", "3. No Preference" };
@@ -3707,6 +3728,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets whose personality traits contain Loyal
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Personality_Traits.Contains(Pers_T.Loyal))
@@ -3716,6 +3738,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 2:
+                    //increase the likelyhood for Neopets whose personality traits contain Mischevious
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Personality_Traits.Contains(Pers_T.Mischevious))
