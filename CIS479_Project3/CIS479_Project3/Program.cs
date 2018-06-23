@@ -1693,6 +1693,13 @@ namespace CIS479_Project3
         public static void EvalAvailability() {
             AvailabilityQuestion1();
         }
+
+        /// <summary>
+        /// Entry point for user to answer questions about when they would like their neopet.
+        /// Common = anytime
+        /// Rare = under certain conditions
+        /// Special = during specific times, or locations
+        /// </summary>
         public static void AvailabilityQuestion1()
         {
             var options = new string[] { "1. Common", "2. Rare", "3. Special", "4. No Preference" };
@@ -1716,6 +1723,7 @@ namespace CIS479_Project3
                             _pets[i].CF++;
                         }
                     }
+                    //if Rare ask about pre-existing conditions
                     AvailabilityRareQuestion1();
                     AvailabilityRareQuestion2();
                     break;
@@ -1727,6 +1735,7 @@ namespace CIS479_Project3
                             _pets[i].CF++;
                         }
                     }
+                    //if Special, begin asking about specific locations
                     AvailabilityOriginQuestion1();
                     break;
                 case 4:
@@ -1734,6 +1743,9 @@ namespace CIS479_Project3
                     break;
             }
         }
+        /// <summary>
+        /// Requests additional information about previously obtained neopet, "Krawk"
+        /// </summary>
         public static void AvailabilityRareQuestion1()
         {
             var options = new string[] { "1. Yes", "2. No" };
@@ -1744,6 +1756,7 @@ namespace CIS479_Project3
                 case 1:
                     for (var i = 0; i < _pets.Count; i++)
                     {
+                        // Increase likelyhood Krawk is selected
                         if (_pets[i].Name == "Krawk")
                         {
                             _pets[i].CF++;
@@ -1753,6 +1766,7 @@ namespace CIS479_Project3
                 case 2:
                     for (var i = 0; i < _pets.Count; i++)
                     {
+                        // ensure that "Krawk" can never be selected
                         if (_pets[i].Name == "Krawk")
                         {
                             _pets[i].CF -= 1000;
@@ -1762,6 +1776,9 @@ namespace CIS479_Project3
                     break;
             }
         }
+        /// <summary>
+        /// Requests additional information about previously obtained item
+        /// </summary>
         public static void AvailabilityRareQuestion2()
         {
             var options = new string[] { "1. Yes", "2. No" };
@@ -1772,6 +1789,7 @@ namespace CIS479_Project3
                 case 1:
                     for (var i = 0; i < _pets.Count; i++)
                     {
+                        //increase likely hood Draik is selected
                         if (_pets[i].Name == "Draik")
                         {
                             _pets[i].CF++;
@@ -1781,6 +1799,7 @@ namespace CIS479_Project3
                 case 2:
                     for (var i = 0; i < _pets.Count; i++)
                     {
+                        // ensure neopet can never be selected
                         if (_pets[i].Name == "Draik")
                         {
                             _pets[i].CF -= 1000;
@@ -1789,15 +1808,22 @@ namespace CIS479_Project3
                     break;
             }
         }
+        /// <summary>
+        /// Requests additional information regarding user-preference for a specific location
+        /// </summary>
         public static void AvailabilityOriginQuestion1()
         {
             var options = new string[] { "1. Yes", "2. No" };
             var answer = GetInput("Does your Neopet originate from a specific location?", options);
             if (answer == 1)
             {
+                //Start with Urban locations
                 AvailabilityUrbanQuestion1();
             }
         }
+        /// <summary>
+        /// Requests additional information reguarding user-preference for a neopet that originates in an aquatic area
+        /// </summary>
         public static void AvailabilityOriginQuestion2()
         {
             var options = new string[] { "1. Yes", "2. No" };
@@ -1806,9 +1832,11 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //begin follow-up questions for more specific aquatic areas
                     AvailabilityWaterQuestion1();
                     break;
                 case 2:
+                    //Begin asking questions about Aerial and Land based locations
                     AvailabilityOriginQuestion3();
                     break;
                 default:
@@ -1817,6 +1845,9 @@ namespace CIS479_Project3
                     break;
             }
         }
+        /// <summary>
+        /// Requests additional information reguarding user-preference for a neopet that originates on land or in the sky
+        /// </summary>
         public static void AvailabilityOriginQuestion3()
         {
             var options = new string[] { "1. Sky", "2. The Outlands", "3. Mysterious" };
@@ -1825,12 +1856,15 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //begin asking questions about Aerial locations
                     AvailabilitySkyQuestion1();
                     break;
                 case 2:
+                    //Begin asking questions about Land-based locations
                     AvailabilityLandQuestion1();
                     break;
                 case 3:
+                    //increase the likelyhood for Neopets that have a Region of Unknown to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Region == Region.Unknown)
@@ -1843,6 +1877,9 @@ namespace CIS479_Project3
             }
 
         }
+        /// <summary>
+        /// Requests additional information reguarding user-preference for a neopet that originates in an Urban area
+        /// </summary>
         public static void AvailabilityUrbanQuestion1()
         {
             var options = new string[] { "1. Yes", "2. No" };
@@ -1851,14 +1888,19 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //Continue asking questions about Urban areas
                     AvailabilitUrbanQuestion2();
                     break;
                 case 2:
+                    //Begin asking questions about areas near water
                     AvailabilityOriginQuestion2();
                     break;
 
             }
         }
+        /// <summary>
+        /// Requests additional information reguarding user-preference for a neopet that originates in specific Urban areas
+        /// </summary>
         public static void AvailabilitUrbanQuestion2()
         {
             var options = new string[] { "1. Neopia Central", "2. Meridell", "3. Either" };
@@ -1867,6 +1909,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets that have a Region of Neopia Central to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Region == Region.NeopiaCentral)
@@ -1876,6 +1919,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 2:
+                    //increase the likelyhood for Neopets that have a Region of Meridell to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Region == Region.Meridell)
@@ -1885,6 +1929,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 3:
+                    //increase the likelyhood for Neopets that have a Region of Meridell or Neopia Central to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Region == Region.Meridell || _pets[i].Region == Region.NeopiaCentral)
@@ -1897,6 +1942,9 @@ namespace CIS479_Project3
             }
 
         }
+        /// <summary>
+        /// Requests additional information reguarding user-preference for a neopet that originates in different types of water bodies
+        /// </summary>
         public static void AvailabilityWaterQuestion1()
         {
             var options = new string[] { "1. Yes", "2. No" };
@@ -1905,15 +1953,20 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //Begin asking questions about Island areas
                     AvailabilityIslandQuestion1();
                     break;
                 case 2:
+                    //Begin asking questions about inland areas
                     AvailabilityWaterQuestion2();
                     break;
 
             }
 
         }
+        /// <summary>
+        /// Requests additional information reguarding user-preference for a neopet that originates in lakeside areas
+        /// </summary>
         public static void AvailabilityWaterQuestion2()
         {
             var options = new string[] { "1. Kiko Lake", "2. Maraqua", "3. Either" };
@@ -1922,18 +1975,22 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //Begin asking about specific dates associated with the Kiko lake area
                     LakeDateQuestion1();
+                    //increase the likelyhood for Neopets that have a Region of Kiko Lake to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         //checks against other instances
-                        if (_pets[i].Region == Region.Meridell && _pets[i].Name != "Kiko")
+                        if (_pets[i].Region == Region.KikoLake && _pets[i].Name != "Kiko")
                         {
                             _pets[i].CF++;
                         }
                     }
                     break;
                 case 2:
+                    //Begin asking about specific dates associated with the Maraqua area
                     LakeDateQuestion2();
+                    //increase the likelyhood for Neopets that have a Region of Maraqua to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         //checks against other instances
@@ -1944,6 +2001,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 3:
+                    //increase the likelyhood for Neopets that have a Region of Kiko Lake or Maraqua to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         //checks against other instances
@@ -1957,6 +2015,9 @@ namespace CIS479_Project3
             }
 
         }
+        /// <summary>
+        /// Requests additional information reguarding user-preference for a neopet that originates in island areas
+        /// </summary>
         public static void AvailabilityIslandQuestion1()
         {
             var options = new string[] { "1. Mystery Island", "2. Lutari Island", "3. Roo Island", "4. Krawk Island", "5. No Preference" };
@@ -1965,6 +2026,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets that have a Region of Mystery Island to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Region == Region.Mystery_Island)
@@ -1974,7 +2036,9 @@ namespace CIS479_Project3
                     }
                     break;
                 case 2:
+                    //Begin asking about specific dates associated with the Lutari Island area
                     IslandDateQuestion1();
+                    //increase the likelyhood for Neopets that have a Region of Lutari Island to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         //checks against other instances
@@ -1985,6 +2049,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 3:
+                    //increase the likelyhood for Neopets that have a Region of Roo Island to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Region == Region.Roo_Island)
@@ -1994,6 +2059,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 4:
+                    //increase the likelyhood for Neopets that have a Region of Kraik Island to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Region == Region.Kraik_Island)
@@ -2003,6 +2069,7 @@ namespace CIS479_Project3
                     }
                     break;
                 default:
+                    //increase the likelyhood for Neopets that have a Region of Kraik, Roo, Mystery or Lutari Island to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Region == Region.Kraik_Island ||
@@ -2014,10 +2081,12 @@ namespace CIS479_Project3
                         }
                     }
                     break;
-
             }
 
         }
+        /// <summary>
+        /// Requests additional information reguarding user-preference for a neopet that originates in above the land and water
+        /// </summary>
         public static void AvailabilitySkyQuestion1()
         {
             var options = new string[] { "1. Kredulor", "2. Faerieland", "3. No Preference" };
@@ -2026,7 +2095,9 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //Begin asking about specific dates associated with the Kredulor area
                     SkyDateQuestion1();
+                    //increase the likelyhood for Neopets that have a Region of Kredulor to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         //checks against other instances
@@ -2037,7 +2108,9 @@ namespace CIS479_Project3
                     }
                     break;
                 case 2:
+                    //Begin asking about specific dates associated with the FearieLand area
                     SkyDateQuestion2();
+                    //increase the likelyhood for Neopets that have a Region of FearieLand to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         //checks against other instances
@@ -2048,6 +2121,7 @@ namespace CIS479_Project3
                     }
                     break;
                 default:
+                    //increase the likelyhood for Neopets that have a Region of FearieLand or Kredulor to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         //checks against other instances
@@ -2061,6 +2135,9 @@ namespace CIS479_Project3
             }
 
         }
+        /// <summary>
+        /// Requests additional information reguarding user-preference for a neopet that originates on Land
+        /// </summary>
         public static void AvailabilityLandQuestion1()
         {
             var options = new string[] { "1. Terror Mountain", "2. Tyrannia", "3. Lost Desert", "4. Any" };
@@ -2069,7 +2146,9 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //Begin asking about specific dates associated with the Terror Mountain area
                     LandDateQuestion1();
+                    //increase the likelyhood for Neopets that have a Region of Terror Moutain to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         //checks against other instances
@@ -2080,8 +2159,11 @@ namespace CIS479_Project3
                     }
                     break;
                 case 2:
+                    //Begin asking about specific dates associated with the Tyrannia area
                     LandDateQuestion3();
+                    //Begin asking about specific dates associated with the Tyrannia area
                     LandDateQuestion4();
+                    //increase the likelyhood for Neopets that have a Region of Tyrannia to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         //checks against other instances
@@ -2092,7 +2174,9 @@ namespace CIS479_Project3
                     }
                     break;
                 case 3:
+                    //Begin asking about specific dates associated with the Lost Desert area
                     LandDateQuestion2();
+                    //increase the likelyhood for Neopets that have a Region of Lost Desert to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         //checks against other instances
@@ -2103,6 +2187,7 @@ namespace CIS479_Project3
                     }
                     break;
                 default:
+                    //increase the likelyhood for Neopets that have a Region of Lost Desert, Terror Mountain, or Tyrannia to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         //checks against other instances
@@ -2117,6 +2202,10 @@ namespace CIS479_Project3
             }
 
         }
+        /// <summary>
+        /// Requests additional information reguarding user-preference for a neopet that originates on a specific date ("Lutari")
+        /// </summary>
+        /// <returns></returns>
         public static bool IslandDateQuestion1()
         {
             var options = new string[] { "1. yes", "2. no" };
@@ -2125,6 +2214,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets whose name is Lutari to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Name == "Lutari")
@@ -2134,6 +2224,7 @@ namespace CIS479_Project3
                     }
                     return true;
                 case 2:
+                    //ensure that neopets named Lutari can never be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Name == "Lutari")
@@ -2146,6 +2237,10 @@ namespace CIS479_Project3
             }
             return false;
         }
+        /// <summary>
+        /// Requests additional information reguarding user-preference for a neopet that originates on a specific date ("Kiko")
+        /// </summary>
+        /// <returns></returns>
         public static bool LakeDateQuestion1()
         {
             var options = new string[] { "1. yes", "2. no" };
@@ -2154,6 +2249,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets whose name is Kiko to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Name == "Kiko")
@@ -2163,6 +2259,7 @@ namespace CIS479_Project3
                     }
                     return true;
                 case 2:
+                    //ensure that neopets named Kiko can never be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Name == "Kiko")
@@ -2175,6 +2272,10 @@ namespace CIS479_Project3
             }
             return false;
         }
+        /// <summary>
+        /// Requests additional information reguarding user-preference for a neopet that originates on a specific date ("Koi")
+        /// </summary>
+        /// <returns></returns>
         public static bool LakeDateQuestion2()
         {
             var options = new string[] { "1. yes", "2. no" };
@@ -2183,6 +2284,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets whose name is Koi to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Name == "Koi")
@@ -2192,6 +2294,7 @@ namespace CIS479_Project3
                     }
                     return true;
                 case 2:
+                    //ensure that neopets named Koi can never be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Name == "Koi")
@@ -2204,6 +2307,10 @@ namespace CIS479_Project3
             }
             return false;
         }
+        /// <summary>
+        /// Requests additional information reguarding user-preference for a neopet that originates on a specific date ("Grundo")
+        /// </summary>
+        /// <returns></returns>
         public static bool SkyDateQuestion1()
         {
             var options = new string[] { "1. yes", "2. no" };
@@ -2212,6 +2319,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets whose name is Grundo to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Name == "Grundo")
@@ -2221,6 +2329,7 @@ namespace CIS479_Project3
                     }
                     return true;
                 case 2:
+                    //ensure that neopets named Grundo can never be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Name == "Grundo")
@@ -2233,6 +2342,10 @@ namespace CIS479_Project3
             }
             return false;
         }
+        /// <summary>
+        /// Requests additional information reguarding user-preference for a neopet that originates on a specific date ("Poogle")
+        /// </summary>
+        /// <returns></returns>
         public static bool SkyDateQuestion2()
         {
             var options = new string[] { "1. yes", "2. no" };
@@ -2241,6 +2354,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets whose name is Poogle to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Name == "Poogle")
@@ -2250,6 +2364,7 @@ namespace CIS479_Project3
                     }
                     return true;
                 case 2:
+                    //ensure that neopets named Grundo can never be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Name == "Poogle")
@@ -2262,6 +2377,10 @@ namespace CIS479_Project3
             }
             return false;
         }
+        /// <summary>
+        /// Requests additional information reguarding user-preference for a neopet that originates on a specific date ("Cybunny")
+        /// </summary>
+        /// <returns></returns>
         public static bool LandDateQuestion1()
         {
             var options = new string[] { "1. yes", "2. no" };
@@ -2270,6 +2389,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets whose name is Cybunny to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Name == "Cynbunny")
@@ -2279,6 +2399,7 @@ namespace CIS479_Project3
                     }
                     return true;
                 case 2:
+                    //ensure that neopets named Cybunny can never be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Name == "Cynbunny")
@@ -2291,6 +2412,10 @@ namespace CIS479_Project3
             }
             return false;
         }
+        /// <summary>
+        /// Requests additional information reguarding user-preference for a neopet that originates on a specific date ("Ruki")
+        /// </summary>
+        /// <returns></returns>
         public static bool LandDateQuestion2()
         {
             var options = new string[] { "1. yes", "2. no" };
@@ -2299,6 +2424,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets whose name is Ruki to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Name == "Ruki")
@@ -2308,6 +2434,7 @@ namespace CIS479_Project3
                     }
                     return true;
                 case 2:
+                    //ensure that neopets named Ruki can never be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Name == "Ruki")
@@ -2320,6 +2447,10 @@ namespace CIS479_Project3
             }
             return false;
         }
+        /// <summary>
+        /// Requests additional information reguarding user-preference for a neopet that originates on a specific date ("Chomby")
+        /// </summary>
+        /// <returns></returns>
         public static bool LandDateQuestion3()
         {
             var options = new string[] { "1. yes", "2. no" };
@@ -2328,6 +2459,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets whose name is Chomby to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Name == "Chommby")
@@ -2337,6 +2469,7 @@ namespace CIS479_Project3
                     }
                     return true;
                 case 2:
+                    //ensure that neopets named Chomby can never be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Name == "Chomby")
@@ -2349,6 +2482,10 @@ namespace CIS479_Project3
             }
             return false;
         }
+        /// <summary>
+        /// Requests additional information reguarding user-preference for a neopet that originates on a specific date ("Tonu")
+        /// </summary>
+        /// <returns></returns>
         public static bool LandDateQuestion4()
         {
             var options = new string[] { "1. yes", "2. no" };
@@ -2357,6 +2494,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets whose name is Tonu to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Name == "Tonu")
@@ -2366,6 +2504,7 @@ namespace CIS479_Project3
                     }
                     return true;
                 case 2:
+                    //ensure that neopets named Tonu can never be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Name == "Tonu")
@@ -2378,6 +2517,10 @@ namespace CIS479_Project3
             }
             return false;
         }
+        /// <summary>
+        /// Requests additional information reguarding user-preference for a neopet that originates on a specific date ("Hissi")
+        /// </summary>
+        /// <returns></returns>
         public static bool DefaultDateQuestion1()
         {
             var options = new string[] { "1. yes", "2. no" };
@@ -2386,6 +2529,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets whose name is Hissi to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Name == "Hissi")
@@ -2395,6 +2539,7 @@ namespace CIS479_Project3
                     }
                     return false;
                 case 2:
+                    //ensure that neopets named Hissi can never be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Name == "Hissi")
@@ -2407,6 +2552,10 @@ namespace CIS479_Project3
             }
             return false;
         }
+        /// <summary>
+        /// Requests additional information reguarding user-preference for a neopet that originates on a specific date ("Jetsam")
+        /// </summary>
+        /// <returns></returns>
         public static bool DefaultDateQuestion2()
         {
             var options = new string[] { "1. yes", "2. no" };
@@ -2415,6 +2564,7 @@ namespace CIS479_Project3
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets whose name is Jetsam to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Name == "Jetsam")
@@ -2424,6 +2574,7 @@ namespace CIS479_Project3
                     }
                     return true;
                 case 2:
+                    //increase the likelyhood for Neopets whose name is Jetsam to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Name == "Jetsam")
@@ -2443,12 +2594,19 @@ namespace CIS479_Project3
         public static void EvalBio() {
             BioQuestion1();
         }
+        /// <summary>
+        /// Entry point to begin asking questions regarding the user's preference to broad geographical locations
+        /// Aerial = Sky or Space
+        /// Aquatic =  Oceans, Seas, Lakes, Islands
+        /// Land = Mountains, Artic, Tundra, Forests, Jungles, Urban Areas, Meadows, Deserts, Beaches
+        /// </summary>
         public static void BioQuestion1() {
             var options = new string[] { "1. Fly", "2. Swim", "3. Crawl", "4. No Preference" };
             var answer = GetInput("Does your Neopet like to...", options);
             switch (answer)
             {
                 case 1:
+                    //increase the likelyhood for Neopets whose Biozone is Aerial to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Biozone == Biozone.Aerial)
@@ -2456,11 +2614,13 @@ namespace CIS479_Project3
                             _pets[i].CF++;
                         }
                     }
+                    
                     HabitatQuestion1(Biozone.Aerial);
                     //Physically specific 
                     AerialPhysicalQuestion1();
                     break;
                 case 2:
+                    //increase the likelyhood for Neopets whose Biozone is Aquatic to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Biozone == Biozone.Aquatic)
@@ -2471,6 +2631,7 @@ namespace CIS479_Project3
                     HabitatQuestion1(Biozone.Aquatic);
                     break;
                 case 3:
+                    //increase the likelyhood for Neopets whose Biozone is Land to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Biozone == Biozone.Land)
@@ -2485,6 +2646,10 @@ namespace CIS479_Project3
                     break;
             }
         }
+        /// <summary>
+        /// Requests additional information reguarding user-preference for a neopet to have a habitat preference
+        /// </summary>
+        /// <param name="zone">User selected Biozone from BioQuestion1</param>
         public static void HabitatQuestion1(Biozone zone) {
             var options = new string[] { "1. Yes", "2. No" };
             var answer = GetInput("Does your ideal Neopet have a habitat preference?", options);
@@ -2493,16 +2658,23 @@ namespace CIS479_Project3
                 HabitatQuestion2(zone);
             }
         }
+        /// <summary>
+        /// Requests additional information reguarding user-preference for a neopet that has a habitat preference.
+        /// </summary>
+        /// <param name="zone">User selected Biozone from BioQuestion1</param>
         public static void HabitatQuestion2(Biozone zone) {
             switch (zone)
             {
                 case Biozone.Aquatic:
+                    //begin asking questions about Aquatic habitats
                     HabitatAquaticQuestion1();
                     break;
                 case Biozone.Land:
+                    //begin asking questions about Aquatic habitats
                     HabitatLandQuestion1();
                     break;
                 case Biozone.Aerial:
+                    //increase the likelyhood for Neopets whose Habitat is Sky or Space to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Habitats.Contains(Habitat.Sky) || _pets[i].Habitats.Contains(Habitat.Space))
@@ -2512,12 +2684,16 @@ namespace CIS479_Project3
                     }
                     break;
             }
-        }       
+        }
+        /// <summary>
+        /// Requests additional information reguarding user-preference for a neopet that have a habitat preference on/near the water
+        /// </summary>
         public static void HabitatAquaticQuestion1() {
             var options = new string[] { "1. Beachy sands", "2. Placid Lakes", "3. Vast Seas or Oceans", "4. No Preference" };
             var answer = GetInput("Does your Neopet like...?", options);
             switch (answer) {
                 case 1:
+                    //increase the likelyhood for Neopets whose Habitat are Beaches or Islands to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Habitats.Contains(Habitat.Beaches) ||
@@ -2529,6 +2705,7 @@ namespace CIS479_Project3
 
                     break;
                 case 2:
+                    //increase the likelyhood for Neopets whose Habitat are Lakes or Region is Kiko Lake to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Habitats.Contains(Habitat.Lakes) || _pets[i].Region == Region.KikoLake)
@@ -2538,6 +2715,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 3:
+                    //increase the likelyhood for Neopets whose Habitat are Oceans or Seas to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Habitats.Contains(Habitat.Oceans) ||
@@ -2548,6 +2726,7 @@ namespace CIS479_Project3
                     }
                     break;
                 default:
+                    //increase the likelyhood for Neopets whose Habitat are Beaches, Islands, Oceans, Seas, or Lakes to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Habitats.Contains(Habitat.Beaches) || 
@@ -2562,11 +2741,15 @@ namespace CIS479_Project3
                     break;
             }
         }
+        /// <summary>
+        /// Requests additional information reguarding user-preference for a neopet that have a habitat preference on land
+        /// </summary>
         public static void HabitatLandQuestion1() {
             var options = new string[] { "1. Shades of the Trees", "2. Sprawling Cities", "3. Vast Meadows", "4. Warm sand", "5. Chilly Air" };
             var answer = GetInput("Does your Neopet prefer?", options);
             switch (answer) {
                 case 1:
+                    //increase the likelyhood for Neopets whose Habitat are Forests or Jungles to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Habitats.Contains(Habitat.Forests) ||
@@ -2577,6 +2760,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 2:
+                    //increase the likelyhood for Neopets whose Habitat are Urban areas to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Habitats.Contains(Habitat.Urban))
@@ -2586,6 +2770,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 3:
+                    //increase the likelyhood for Neopets whose Habitat are Meadows to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Habitats.Contains(Habitat.Meadows))
@@ -2595,6 +2780,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 4:
+                    //increase the likelyhood for Neopets whose Habitat are Beaches, Islands, or Deserts areas to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Habitats.Contains(Habitat.Beaches) ||
@@ -2606,6 +2792,7 @@ namespace CIS479_Project3
                     }
                     break;
                 case 5:
+                    //increase the likelyhood for Neopets whose Habitat are Artic, Tundra, or Mountain areas to be selected
                     for (var i = 0; i < _pets.Count; i++)
                     {
                         if (_pets[i].Habitats.Contains(Habitat.Artic) ||
@@ -2637,6 +2824,9 @@ namespace CIS479_Project3
             PhysicalNocturnQuestion1();
             PhysicalDietQuestion();
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void PhysicalKingdomQuestion1() {
             var options = new string[] { "1. Dragons", "2. Aliens", "3. Birdies", "4. Live Birthers", "5. Creepy-Crawlies/Bugsie-Wugies", "6. Fishies", "7. Reptiles/Amphibians", "8. Who knows?", "9. No Preference" };
             var answer = GetInput("I like my species like i like my...", options);
@@ -2716,6 +2906,9 @@ namespace CIS479_Project3
                     break;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void PhysicalSizeQuestion1() {
             var options = new string[] { "1. Large", "2. Medium", "3. Small", "4. No Preference" };
             var answer = GetInput("How big is your ideal Neopet?", options);
@@ -2750,6 +2943,9 @@ namespace CIS479_Project3
             }
 
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void PhysicalTailQuestion1()
         {
             var options = new string[] { "1. Yes", "2. No" };
@@ -2765,6 +2961,9 @@ namespace CIS479_Project3
                 PhysicalTailQuestion2();
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void PhysicalTailQuestion2() {
             var options = new string[] { "1. Bounce around", "2. Hanging", "3. Moving about", "4. Look taller", "5. No Preference" };
             var answer = GetInput("How do they use their tails?", options);
@@ -2809,6 +3008,9 @@ namespace CIS479_Project3
 
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void PhysicalLegQuestion1() {
             var options = new string[] { "1. 2 Legs", "2. 4 Legs", "3. None", "4. No Preference" };
             var answer = GetInput("I would prefer them to have", options);
@@ -2847,6 +3049,9 @@ namespace CIS479_Project3
 
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void PhysicalLegQuestion2() {
             var options = new string[] { "1. Paws", "2. Hooves", "3. Flippers", "4. Other" };
             var answer = GetInput("What type of legs do they have?", options);
@@ -2892,6 +3097,9 @@ namespace CIS479_Project3
 
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void PhysicalEarsQuestion1() {
             var options = new string[] { "1. Yes", "2. No Ears", "3. No Preference" };
             var answer = GetInput("I would prefer them to have listen holes", options);
@@ -2914,6 +3122,9 @@ namespace CIS479_Project3
                 }
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void PhysicalTusksHornsQuestion1() {
             var options = new string[] { "1. Tusks", "2. Horns", "3. Both", "4. No Preference" };
             var answer = GetInput("I would prefer them to have", options);
@@ -2948,6 +3159,9 @@ namespace CIS479_Project3
                 default:break;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void PhysicalNoseQuestion1() {
             var options = new string[] { "1. Beaks", "2. Trunks", "3. Jaws", "4. No preference!" };
             var answer = GetInput("I would prefer them to have", options);
@@ -2982,6 +3196,9 @@ namespace CIS479_Project3
                 }
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void PhysicalFurQuestion1() {
             var options = new string[] { "1. So much fur!", "2. Fur is murder!!!", "3. No Preference" };
             var answer = GetInput("My furr preference is...", options);
@@ -3001,6 +3218,9 @@ namespace CIS479_Project3
                 default: break;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void PhysicalFurQuestion2() {
             var options = new string[] { "1. Everywhere!", "2. On their noggin", "3. Neck", "4. Luscious Mane!", "5. Tail" };
             var answer = GetInput("They should have hair on thier...", options);
@@ -3054,6 +3274,9 @@ namespace CIS479_Project3
                 default: break;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void PhysicalHandsQuestion1() {
             var options = new string[] { "1. Yes", "2. No" };
             var answer = GetInput("They should be able to grab things with thier hands?", options);
@@ -3079,6 +3302,9 @@ namespace CIS479_Project3
                     break;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void PhysicalAllergyQuestion1() {
             var options = new string[] { "1. Like a Boss", "2. Bring on the Sniffles!" };
             var answer = GetInput("They should be able to eat dairy or apples?", options);
@@ -3104,6 +3330,9 @@ namespace CIS479_Project3
                     break;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void PhysicalClawsQuestion1() {
             var options = new string[] { "1. Heck Yass", "2. No Pokies!", "3. No Preference" };
             var answer = GetInput("Thier mitts should also have pokies!", options);
@@ -3129,6 +3358,9 @@ namespace CIS479_Project3
                     break;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void PhysicalNocturnQuestion1() {
             var options = new string[] { "1. They ain't afraid of no ghosts! ", "2. They might need a night-light", "3. No Preference" };
             var answer = GetInput("Are they afraid the dark?", options);
@@ -3154,6 +3386,9 @@ namespace CIS479_Project3
                     break;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void PhysicalDietQuestion() {
             var options = new string[] { "1. Meatsies", "2. Veggies/Fruitsies", "3. Everything", "4. No Preference" };
             var answer = GetInput("They can eat...", options);
@@ -3191,6 +3426,9 @@ namespace CIS479_Project3
             }
             PhysicalAllergyQuestion1();
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void AerialPhysicalQuestion1()
         {
             var options = new string[] { "1. Yes", "2. No" };
@@ -3207,6 +3445,9 @@ namespace CIS479_Project3
                 AerialPhysicalQuestion2();
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void AerialPhysicalQuestion2()
         {
             var options = new string[] { "1. Long Feathers", "2. Batty Webbing" };
@@ -3233,6 +3474,9 @@ namespace CIS479_Project3
             }
             AerialPhysicalQuestion3();
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void AerialPhysicalQuestion3()
         {
             var options = new string[] { "1. Grandriose Wings", "2. Pint-size flutter-flappers" };
@@ -3262,6 +3506,9 @@ namespace CIS479_Project3
         #endregion
 
         #region Personality
+        /// <summary>
+        /// 
+        /// </summary>
         public static void EvalPersonality()
         {
             PersonalityShyOutgoingQuestion1();
@@ -3272,6 +3519,9 @@ namespace CIS479_Project3
             PersonalityFoodieQuestion6();
             PersonalityLoyalMischievousQuestion7();
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void PersonalityShyOutgoingQuestion1() {
             var options = new string[] { "1. Shy", "2. Outgoing", "3. No Preference" };
             var answer = GetInput("Is your ideal Neopet SHY or OUTGOING?", options);
@@ -3301,6 +3551,9 @@ namespace CIS479_Project3
                     break;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void PersonalityPeacefulCombativeQuestion2() {
             var options = new string[] { "1. Peaceful", "2. Combative", "3. No Preference" };
             var answer = GetInput("Is your ideal Neopet PEACEFUL or COMBATIVE?", options);
@@ -3331,6 +3584,9 @@ namespace CIS479_Project3
                     break;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void PersonalityAventurousIntelligentQuestion3() {
             var options = new string[] { "1. Adventurous", "2. Intelligent", "3. No Preference" };
             var answer = GetInput("Is your ideal Neopet ADVENTUROUS or INTELLIGENT?", options);
@@ -3359,6 +3615,9 @@ namespace CIS479_Project3
                     break;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void PersonalityLuckyMagicalQuestion4() {
             var options = new string[] { "1. Yes", "2. No", "3. No Preference" };
             var answer = GetInput("Is your ideal Neopet LUCKY or MAGICAL?", options);
@@ -3387,6 +3646,9 @@ namespace CIS479_Project3
                     break;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void PersonalityGenerousKindQuestion5() {
             var options = new string[] { "1. Yes", "2. No", "3. No Preference" };
             var answer = GetInput("Is your ideal Neopet GENEROUS and KIND?", options);
@@ -3415,6 +3677,9 @@ namespace CIS479_Project3
                     break;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void PersonalityFoodieQuestion6() {
             var options = new string[] { "1. They're a little fatty!", "2. No Preference" };
             var answer = GetInput("Does your ideal Neopet love food?", options);
@@ -3432,6 +3697,9 @@ namespace CIS479_Project3
                     break;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static void PersonalityLoyalMischievousQuestion7() {
             var options = new string[] { "1. Ride or Die!", "2. Lil'@$$hole!", "3. No Preference" };
             var answer = GetInput("Is your ideal Neopet LOYAL or MISCHIEVOUS?", options);
